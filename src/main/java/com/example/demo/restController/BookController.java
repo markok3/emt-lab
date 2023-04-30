@@ -64,7 +64,7 @@ public class BookController {
     @PutMapping("/reserve/{id}")
     public ResponseEntity reserve(@PathVariable Long id) {
         Integer result = bookService.reserve(id);
-        if(result >= 1)
+        if(result >= 0)
             return ResponseEntity.ok().build();
 
         return ResponseEntity.badRequest().build();
